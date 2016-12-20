@@ -25,4 +25,21 @@ console.log(finalValue);
 In this hypothetical case, the monthly amount invested is 100 (var invValue), the period is 72 months (var t), and the rate of return is 1% per month (var i).
 The calculation is based on the following formula: **A = V * (1 + i)^t**
 
-Contributions to improving the algorithm are welcome!
+An update to a function would be
+```javascript
+function compInterest (invValue,t,i){
+	var p = 1;
+	for(j=1; j<=t; j++){
+   	compInterest = (invValue += 100) * Math.pow((1 + i),p++);
+	};
+   return compInterest.toFixed(2);
+}
+```
+To call de function: 
+```javascript
+compInterest(100,72,0.01);
+```
+And the result:
+```javascript
+"14943.82"
+```
